@@ -1,9 +1,9 @@
-import rospy
-from ros_pkg.srv import multiplier,multiplierResponse
+import rospy                                                                 #importing a ros python extention
+from ros_pkg.srv import multiplier,multiplierResponse                        # importing the service message created by multiplier.srv
 
 def multiplier_client(x,y):
-    rospy.init_node("client_node")
-    rospy.wait_for_service("multiplier")
+    rospy.init_node("client_node")                                           #intiatiating the node as a client_node
+    rospy.wait_for_service("multiplier")                                     #
     rate = rospy.Rate(1)
     while not rospy.is_shutdown():
         try:
